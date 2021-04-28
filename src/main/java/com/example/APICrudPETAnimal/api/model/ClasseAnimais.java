@@ -1,12 +1,14 @@
-package com.example.APICrudAnimais.api.model;
+package com.example.APICrudPETAnimal.api.model;
 
 public enum ClasseAnimais {
 
     MAMIFERO("mamifero"),
     REPTIL("reptil"),
-    AVES("aves"),
-    ANFIBIOS("anfibios"),
-    PEIXES("peixes");
+    AVE("ave"),
+    ANFIBIO("anfibio"),
+    PEIXE("peixe"),
+    FELINO("felino"),
+    CANINO("canino") ;
 
     private String classedescricao;
 

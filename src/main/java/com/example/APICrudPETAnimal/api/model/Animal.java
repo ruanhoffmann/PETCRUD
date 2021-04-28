@@ -1,4 +1,4 @@
-package com.example.APICrudAnimais.api.model;
+package com.example.APICrudPETAnimal.api.model;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -11,6 +11,14 @@ import javax.persistence.Id;
 @Getter
 @Setter
 public class Animal {
+
+    @Id
+    @GeneratedValue
+    private Long id;
+    private String descricaoAnimal;
+    private GrupoAnimais grupoAnimais;
+    private ClasseAnimais classeAnimais;
+
     public Long getId() {
         return id;
     }
@@ -26,12 +34,5 @@ public class Animal {
     public void setDescricaoAnimal(String descricaoAnimal) {
         this.descricaoAnimal = descricaoAnimal;
     }
-
-    @Id
-    @GeneratedValue
-    private Long id;
-    private String descricaoAnimal;
-    private GrupoAnimais grupoAnimais;
-    private ClasseAnimais classeAnimais;
 
 }

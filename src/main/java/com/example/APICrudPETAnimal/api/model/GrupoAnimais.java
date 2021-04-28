@@ -1,4 +1,4 @@
-package com.example.APICrudAnimais.api.model;
+package com.example.APICrudPETAnimal.api.model;
 
 public enum GrupoAnimais {
 

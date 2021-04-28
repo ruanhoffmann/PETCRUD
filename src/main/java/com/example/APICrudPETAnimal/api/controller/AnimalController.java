@@ -1,7 +1,7 @@
-package com.example.APICrudAnimais.api.controller;
+package com.example.APICrudPETAnimal.api.controller;
 
-import com.example.APICrudAnimais.api.model.Animal;//importa a classe Animal
-import com.example.APICrudAnimais.api.repository.AnimalRepository;
+import com.example.APICrudPETAnimal.api.repository.AnimalRepository;
+import com.example.APICrudPETAnimal.api.model.Animal;//importa a classe Animal
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -12,7 +12,7 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-public class AnimaisController{
+public class AnimalController {
     //crindo o rest controler para ajudar a identifar como a classe vai funcionar.
 
     @Autowired
