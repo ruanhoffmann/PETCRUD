@@ -1,13 +1,13 @@
-package com.example.APICrudPETUsuario.api;
+package com.example.APICrudPETServicos;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class ApiUserApplication{
+public class ApiApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(ApiUserApplication.class, args);
+        SpringApplication.run(com.example.APICrudPETServicos.ApiApplication.class, args);
     }
 
 }
