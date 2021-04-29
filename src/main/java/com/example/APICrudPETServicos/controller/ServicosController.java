@@ -11,10 +11,11 @@ import java.net.URI;
 import java.util.List;
 import java.util.Optional;
 
+@RestController
 public class ServicosController {
 
     @Autowired
-    private ServicosRepository servicosRepository; // instanciando o repository;
+    private ServicosRepository servicosRepository;
 
     @PostMapping("/servicos")
     public ResponseEntity<Object> createServicos(@RequestBody Servicos servicos) {

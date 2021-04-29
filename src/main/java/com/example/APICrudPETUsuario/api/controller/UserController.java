@@ -13,35 +13,33 @@ import java.util.Optional;
 
 @RestController
 public class UserController {
-
     @Autowired
     private UserRepository userRepository;
 
-    @PostMapping("/usuario")
-    public ResponseEntity<Object> createUser(@RequestBody Usuario usuario){
-        Usuario savedUsuario = userRepository.save(usuario);
+    @PostMapping("/user")
+    public ResponseEntity<Object> createUser(@RequestBody Usuario user) {
+        Usuario savedUser = userRepository.save(user);
 
         URI location = ServletUriComponentsBuilder.fromCurrentRequest()
-                .path("/{id}").buildAndExpand(savedUsuario.getId()).toUri();
+                .path("/{id}").buildAndExpand(savedUser.getId()).toUri();
 
         return ResponseEntity.created(location).build();
     }
 
-    @GetMapping("/usuario")
-    public List<Usuario> getUsuario(){
+    @GetMapping("/user")
+    public List<Usuario> getUser(){
         return userRepository.findAll();
     }
 
-    @GetMapping("/usuario{id}")
-    public Usuario getUsuario(@PathVariable long id){
-        Optional<Usuario> usuario = userRepository.findById(id);
+    @GetMapping("/user{id}")
+    public Usuario getUser(@PathVariable long id){
+        Optional<Usuario> user = userRepository.findById(id);
 
-        return usuario.get();//trás todos os atributos da classe;
+        return user.get();
     }
 
-    @DeleteMapping("/usuario{id}")
-    public void deleteUsuario (@PathVariable long id){
+    @DeleteMapping("/user{id}")
+    public void deleteUser (@PathVariable long id){
         userRepository.deleteById(id);
     }
-
 }
