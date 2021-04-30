@@ -18,35 +18,4 @@ public class Servicos {
     private Integer preco;
     private String titulo;
 
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getServDescricao() {
-        return servDescricao;
-    }
-
-    public void setServDescricao(String servDescricao) {
-        this.servDescricao = servDescricao;
-    }
-
-    public Integer getPreco() {
-        return preco;
-    }
-
-    public void setPreco(Integer preco) {
-        this.preco = preco;
-    }
-
-    public String getTitulo() {
-        return titulo;
-    }
-
-    public void setTitulo(String titulo) {
-        this.titulo = titulo;
-    }
 }

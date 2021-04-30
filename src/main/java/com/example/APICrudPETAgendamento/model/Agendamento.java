@@ -6,60 +6,29 @@ import lombok.Setter;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.Table;
 import java.util.Date;
+import javax.persistence.*;
 
-@Entity
+@Entity //já diz que minha tabela é agendamento
 @Getter
 @Setter
-
 public class Agendamento {
 
     @Id
     @GeneratedValue
 
     private Long id;
+    @Column(nullable = false)
     private Date dataInicial;
+
+    @Column(nullable = false)
     private Date dataFinal;
+
+    @Column(nullable = false)
     private Integer precoTotal;
+
+    @Column(nullable = false)
     private String status;
 
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public Date getDataInicial() {
-        return dataInicial;
-    }
-
-    public void setDataInicial(Date dataInicial) {
-        this.dataInicial = dataInicial;
-    }
-
-    public Date getDataFinal() {
-        return dataFinal;
-    }
-
-    public void setDataFinal(Date dataFinal) {
-        this.dataFinal = dataFinal;
-    }
-
-    public Integer getPrecoTotal() {
-        return precoTotal;
-    }
-
-    public void setPrecoTotal(Integer precoTotal) {
-        this.precoTotal = precoTotal;
-    }
-
-    public String getStatus() {
-        return status;
-    }
-
-    public void setStatus(String status) {
-        this.status = status;
-    }
 }
