@@ -1,4 +1,4 @@
-package com.example.APICrudPETAnimal.api;
+package com.example.APIPETCRUD;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

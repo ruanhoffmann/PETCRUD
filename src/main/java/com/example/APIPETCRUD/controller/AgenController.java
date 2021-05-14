@@ -1,7 +1,7 @@
-package com.example.APICrudPETAgendamento.controller;
+package com.example.APIPETCRUD.controller;
 
-import com.example.APICrudPETAgendamento.model.Agendamento;
-import com.example.APICrudPETAgendamento.repository.AgenRepository;
+import com.example.APIPETCRUD.model.Agendamento;
+import com.example.APIPETCRUD.repository.AgenRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

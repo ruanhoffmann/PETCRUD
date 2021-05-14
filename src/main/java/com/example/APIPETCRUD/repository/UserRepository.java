@@ -1,6 +1,6 @@
-package com.example.APICrudPETUsuario.api.repository;
+package com.example.APIPETCRUD.repository;
 
-import com.example.APICrudPETUsuario.api.model.Usuario;
+import com.example.APIPETCRUD.model.Usuario;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

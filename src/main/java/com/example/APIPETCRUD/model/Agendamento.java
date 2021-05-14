@@ -1,4 +1,4 @@
-package com.example.APICrudPETAgendamento.model;
+package com.example.APIPETCRUD.model;
 
 import lombok.Getter;
 import lombok.Setter;

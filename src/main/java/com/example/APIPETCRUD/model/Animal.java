@@ -1,4 +1,4 @@
-package com.example.APICrudPETUsuario.api.model;
+package com.example.APIPETCRUD.model;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -10,16 +10,14 @@ import javax.persistence.Id;
 @Entity
 @Getter
 @Setter
-
-public class Usuario {
+public class Animal {
 
     @Id
     @GeneratedValue
-
     private Long id;
-    private String responsavel;
-    private Integer telefone;
-    private String email;
-    private String senha;
+    private String descricaoAnimal;
+    private GrupoAnimais grupoAnimais;
+    private ClasseAnimais classeAnimais;
+
 
 }
