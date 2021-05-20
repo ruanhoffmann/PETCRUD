@@ -1,7 +1,7 @@
 package com.example.APIPETCRUD.controller;
 
-import com.example.APIPETCRUD.model.Usuario;
 import com.example.APIPETCRUD.repository.UserRepository;
+import com.example.APIPETCRUD.model.Usuario;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

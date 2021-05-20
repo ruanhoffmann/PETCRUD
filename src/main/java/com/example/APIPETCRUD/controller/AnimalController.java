@@ -1,7 +1,7 @@
 package com.example.APIPETCRUD.controller;
 
+import com.example.APIPETCRUD.model.Animal;
 import com.example.APIPETCRUD.repository.AnimalRepository;
-import com.example.APIPETCRUD.model.Animal;//importa a classe Animal
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

@@ -1,7 +1,7 @@
 package com.example.APIPETCRUD.controller;
 
-import com.example.APIPETCRUD.model.Servicos;
 import com.example.APIPETCRUD.repository.ServicosRepository;
+import com.example.APIPETCRUD.model.Servicos;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
