@@ -3,6 +3,7 @@ package com.example.APIPETCRUD.controller;
 import com.example.APIPETCRUD.repository.UserRepository;
 import com.example.APIPETCRUD.model.Usuario;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
@@ -17,7 +18,8 @@ public class UserController {
     private UserRepository userRepository;
 
     @PostMapping("/user")
-    public ResponseEntity<Object> createUser(@RequestBody Usuario user) {
+    @ResponseStatus(HttpStatus.CREATED)
+    public ResponseEntity<Object> createUser(@RequestBody Usuario user) { //cria o usuário e salva ele.
         Usuario savedUser = userRepository.save(user);
 
         URI location = ServletUriComponentsBuilder.fromCurrentRequest()
@@ -26,20 +28,22 @@ public class UserController {
         return ResponseEntity.created(location).build();
     }
 
-    @GetMapping("/user")
+    @GetMapping("/user") //retorna uma lista de usuário.
     public List<Usuario> getUser(){
         return userRepository.findAll();
     }
 
-    @GetMapping("/user{id}")
+    @GetMapping("/user{id}") // retorna tudo da classe usuário.
     public Usuario getUser(@PathVariable long id){
         Optional<Usuario> user = userRepository.findById(id);
 
         return user.get();
     }
 
-    @DeleteMapping("/user{id}")
+    @DeleteMapping("/user{id}") //deletar o usuário
     public void deleteUser (@PathVariable long id){
         userRepository.deleteById(id);
     }
+
+
 }

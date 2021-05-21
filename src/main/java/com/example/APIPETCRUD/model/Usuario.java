@@ -18,7 +18,7 @@ public class Usuario {
 
     private Long id;
     private String responsavel;
-    private Integer telefone;
+    private String telefone;
     private String email;
     private String senha;
     private TipoUser tipouser;
