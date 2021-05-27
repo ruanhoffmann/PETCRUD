@@ -37,20 +37,17 @@ public class UserController {
     }
 
     //RETORNA O USUÁRIO
-    @ResponseStatus(HttpStatus.OK)
     @GetMapping("/user{id}") // retorna tudo da classe usuário.
-    public Usuario getUser(@PathVariable long id){
+    public Usuario getUser(@PathVariable Long id){
         Optional<Usuario> user = userRepository.findById(id);
 
         return user.get();
     }
 
     //DELETA O USUÁRIO
-    @ResponseStatus(HttpStatus.ACCEPTED)
+
     @DeleteMapping("/user{id}") //deletar o usuário
     public void deleteUser (@PathVariable long id){
         userRepository.deleteById(id);
     }
-
-
 }
