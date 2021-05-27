@@ -17,6 +17,7 @@ public class UserController {
     @Autowired
     private UserRepository userRepository;
 
+    //CRIAÇÃO DE USUÁRIO
     @PostMapping("/user")
     @ResponseStatus(HttpStatus.CREATED)
     public ResponseEntity<Object> createUser(@RequestBody Usuario user) { //cria o usuário e salva ele.
@@ -28,11 +29,15 @@ public class UserController {
         return ResponseEntity.created(location).build();
     }
 
+    //LISTA O USUÁRIO
+    @ResponseStatus(HttpStatus.OK)
     @GetMapping("/user") //retorna uma lista de usuário.
     public List<Usuario> getUser(){
         return userRepository.findAll();
     }
 
+    //RETORNA O USUÁRIO
+    @ResponseStatus(HttpStatus.OK)
     @GetMapping("/user{id}") // retorna tudo da classe usuário.
     public Usuario getUser(@PathVariable long id){
         Optional<Usuario> user = userRepository.findById(id);
@@ -40,6 +45,8 @@ public class UserController {
         return user.get();
     }
 
+    //DELETA O USUÁRIO
+    @ResponseStatus(HttpStatus.ACCEPTED)
     @DeleteMapping("/user{id}") //deletar o usuário
     public void deleteUser (@PathVariable long id){
         userRepository.deleteById(id);
