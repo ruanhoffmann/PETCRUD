@@ -19,7 +19,7 @@ public class Animal {
     private GrupoAnimais grupoAnimais;
     private ClasseAnimais classeAnimais;
 
-    private Usuario user;
+    //private Usuario user;
 
 
 }
