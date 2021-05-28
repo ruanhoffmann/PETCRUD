@@ -37,17 +37,39 @@ public class UserController {
     }
 
     //RETORNA O USUÁRIO
+    @ResponseStatus(HttpStatus.OK)
     @GetMapping("/user{id}") // retorna tudo da classe usuário.
-    public Usuario getUser(@PathVariable Long id){
+    public ResponseEntity<? extends Object> getUser(@PathVariable Long id) {
+
         Optional<Usuario> user = userRepository.findById(id);
 
-        return user.get();
+        if (user.isPresent()) {
+            return new ResponseEntity<Usuario>(user.get(), HttpStatus.OK);
+        }else
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
     }
 
     //DELETA O USUÁRIO
-
+    @ResponseStatus(HttpStatus.OK)
     @DeleteMapping("/user{id}") //deletar o usuário
     public void deleteUser (@PathVariable long id){
         userRepository.deleteById(id);
+    }
+
+    //ATUALIZA
+    @ResponseStatus(HttpStatus.OK)
+    @PutMapping(value="/{id}")
+    public ResponseEntity update(@PathVariable("id") long id,
+                                 @RequestBody Usuario user) {
+        return userRepository.findById(id)
+                .map(record -> {
+                    record.setId(user.getId());
+                    record.setNome(user.getNome());
+                    record.setEmail(user.getEmail());
+                    record.setSenha(user.getSenha());
+                    record.setTelefone(user.getTelefone());
+                    Usuario updated = userRepository.save(record);
+                    return ResponseEntity.ok().body(updated);
+                }).orElse(ResponseEntity.notFound().build());
     }
 }
