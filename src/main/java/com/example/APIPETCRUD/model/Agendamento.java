@@ -16,7 +16,9 @@ import javax.persistence.*;
 public class Agendamento {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.AUTO)
+
+
 
     private Long id;
     @Column(nullable = false)

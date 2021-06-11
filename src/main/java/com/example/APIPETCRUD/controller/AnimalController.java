@@ -31,19 +31,20 @@ public class AnimalController {
     }
 
     @GetMapping("/animal")
-    public List<Animal> getAnimal(){
+    public List<Animal> getAnimal() {
         return animalRepository.findAll();
     }
 
     @GetMapping("/animal{id}")
-    public Animal getAnimais(@PathVariable long id){
+    public Animal getAnimais(@PathVariable long id) {
         Optional<Animal> animal = animalRepository.findById(id);
 
         return animal.get();//trás todos os atributos da classe;
     }
 
     @DeleteMapping("/animal{id}")
-    public void deleteAnimal (@PathVariable long id){
+    public void deleteAnimal(@PathVariable long id) {
         animalRepository.deleteById(id);
     }
+
 }

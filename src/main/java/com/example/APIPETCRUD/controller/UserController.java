@@ -1,5 +1,6 @@
 package com.example.APIPETCRUD.controller;
 
+import com.example.APIPETCRUD.model.Animal;
 import com.example.APIPETCRUD.repository.UserRepository;
 import com.example.APIPETCRUD.model.Usuario;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,6 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import java.net.URI;
+import java.sql.SQLException;
 import java.util.List;
 import java.util.Optional;
 
@@ -16,6 +18,7 @@ import java.util.Optional;
 public class UserController {
     @Autowired
     private UserRepository userRepository;
+    private Animal animal;
 
     //CRIAÇÃO DE USUÁRIO
     @PostMapping("/user")
@@ -72,4 +75,29 @@ public class UserController {
                     return ResponseEntity.ok().body(updated);
                 }).orElse(ResponseEntity.notFound().build());
     }
+
+    @GetMapping("/user?email=xxx&senha=xxx")
+    public String getUserById (@RequestParam String email, @RequestParam String senha){
+        return "Email: " +email +" Senha: " +senha;
+    }
+
+    /*// buscar animais relacionados com usuários.
+    @GetMapping("/animals/{id}")
+    public Animal buscarAnimalById (Long id) {
+
+        String SQLBuscaAnimal =
+                "SELECT  from usuario as u inner join animal as a on u.";
+        resultSet = statement.executeQuery(selectSql);
+
+        // Print results from select statement
+        while (resultSet.next()) {
+            System.out.println(resultSet.getString(2) + " " + resultSet.getString(3));
+        }
+
+        catch(
+                SQLException e){
+            e.printStackTrace();
+
+        }
+    }*/
 }
